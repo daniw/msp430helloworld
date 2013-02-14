@@ -1,7 +1,7 @@
 /* Application for the Lin-Box
  *
  * With profiling:
- *                 MSP430F2132
+ *                 MSP430G2553
  */
 
 #include <io.h>

@@ -12,7 +12,7 @@
 
 #include <io.h>
 #include <signal.h>
-#include <msp430x21x2.h>
+#include <msp430g2553.h>
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
