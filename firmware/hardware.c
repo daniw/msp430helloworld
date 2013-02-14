@@ -69,30 +69,30 @@ void hardware_lowlevel_init(void) {
     WDTCTL    = WDTCTL_INIT;            // Init watchdog as interval timer
     IE1      |= IE1_WDT_INIT;           
 
-    ADC10CTL0 = ADC10CTL0_INIT;         // Initalizes ADC
-    ADC10CTL1 = ADC10CTL1_INIT;         
-    ADC10AE0  = ADC10AE0_INIT;          
-    ADC10DTC0 = ADC10DTC0_INIT;         
-    ADC10DTC1 = ADC10DTC1_INIT;         
+    //~ ADC10CTL0 = ADC10CTL0_INIT;         // Initalizes ADC
+    //~ ADC10CTL1 = ADC10CTL1_INIT;         
+    //~ ADC10AE0  = ADC10AE0_INIT;          
+    //~ ADC10DTC0 = ADC10DTC0_INIT;         
+    //~ ADC10DTC1 = ADC10DTC1_INIT;         
 
-    TA0CTL    = TACTL_INIT;             // Initializes Timer A
-    TA0CCR0   = TACCR0_INIT;            
-    TA0CCR1   = TACCR1_INIT;            
-    TA0CCTL1  = TACCTL1_INIT;           
+    //~ TA0CTL    = TACTL_INIT;             // Initializes Timer A
+    //~ TA0CCR0   = TACCR0_INIT;            
+    //~ TA0CCR1   = TACCR1_INIT;            
+    //~ TA0CCTL1  = TACCTL1_INIT;           
 
-                                        // i2c setup
-    UCB0CTL1  = UCB0CTL1_INIT_0;        // USCI reset
-    UCB0CTL0  = UCB0CTL0_INIT;          // 7-bit, single master, I2C, synchronous
-                                        // No need to configure UCB0CTL1, UCB0BR, nor UCB0I2CCSA for a slave
-    UCB0I2COA = UCB0I2COA_INIT;         // ignore genl call; own adress I2C_ADDRESS
-    UCB0CTL1  = UCB0CTL1_INIT_1;        // release from reset
-    UCB0I2CIE = UCB0I2CIE_INIT;         // enable interrupts on Start , Stop
-    IE2      |= IE2_I2C_INIT;           // enable interrupts on RX and TX
+                                        //~ // i2c setup
+    //~ UCB0CTL1  = UCB0CTL1_INIT_0;        // USCI reset
+    //~ UCB0CTL0  = UCB0CTL0_INIT;          // 7-bit, single master, I2C, synchronous
+                                        //~ // No need to configure UCB0CTL1, UCB0BR, nor UCB0I2CCSA for a slave
+    //~ UCB0I2COA = UCB0I2COA_INIT;         // ignore genl call; own adress I2C_ADDRESS
+    //~ UCB0CTL1  = UCB0CTL1_INIT_1;        // release from reset
+    //~ UCB0I2CIE = UCB0I2CIE_INIT;         // enable interrupts on Start , Stop
+    //~ IE2      |= IE2_I2C_INIT;           // enable interrupts on RX and TX
 
-    DCOCTL    = DCOCTL_INIT;            // Initializes clock module
-    BCSCTL1   = BCSCTL1_INIT;           
-    BCSCTL2   = BCSCTL2_INIT;           
-    BCSCTL3   = BCSCTL3_INIT;           
+    //~ DCOCTL    = DCOCTL_INIT;            // Initializes clock module
+    //~ BCSCTL1   = BCSCTL1_INIT;           
+    //~ BCSCTL2   = BCSCTL2_INIT;           
+    //~ BCSCTL3   = BCSCTL3_INIT;           
 }
 
 /**
