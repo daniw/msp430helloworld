@@ -1,10 +1,8 @@
-/** \addtogroup linbox_hardware
-    @{ */
 
 /**
  * @file
  *
- * Hardware initialization functions for the calibration interface box.
+ * Hardware initialization functions for the ti launchpad
  * 
  *
  * @author      Daniel Winz <daniel.winz@stud.hslu.ch>
@@ -18,23 +16,6 @@
 
 // - - - - - - - - - - public variables - - - - - - - - - - - - - - - - - - - -
 
-/**
- * Table with led hardware configuration
- */
-
-static config_led_t status_led[] = { \
-    {port: (uint16_t*)&P2OUT , pin: BIT4},//0  (LED -5)
-    {port: (uint16_t*)&P2OUT , pin: BIT3},//1  (LED -4)
-    {port: (uint16_t*)&P2OUT , pin: BIT2},//2  (LED -3)
-    {port: (uint16_t*)&P2OUT , pin: BIT1},//3  (LED -2)
-    {port: (uint16_t*)&P2OUT , pin: BIT0},//4  (LED -1)
-    {port: (uint16_t*)&P2OUT , pin: BIT6},//5  (LED 0)
-    {port: (uint16_t*)&P3OUT , pin: BIT3},//6  (LED +1)
-    {port: (uint16_t*)&P3OUT , pin: BIT4},//7  (LED +2)
-    {port: (uint16_t*)&P3OUT , pin: BIT5},//8  (LED +3)
-    {port: (uint16_t*)&P3OUT , pin: BIT6},//9  (LED +4)
-    {port: (uint16_t*)&P3OUT , pin: BIT7},//10 (LED +5)
-};
 // - - - - - - - - - - public functions - - - - - - - - - - - - - - - - - - - -
 
 
@@ -94,60 +75,3 @@ void hardware_lowlevel_init(void) {
     //~ BCSCTL2   = BCSCTL2_INIT;           
     //~ BCSCTL3   = BCSCTL3_INIT;           
 }
-
-/**
- * Reads the actual flow input value from the ADC
- */
-uint16_t read_flow_in(void){
-    uint16_t flow;                      
-    ADC10CTL0 |= (ENC | ADC10SC);       // start ADC conversion
-    while((ADC10CTL0 & ADC10IFG) == 0){ // wait while ADC conversion is running
-    }
-    ADC10CTL0 &= ~ADC10IFG;             // clear interrupt flag
-    flow = ADC10MEM;                    // 'flow' := ADC value
-    return(flow);                       // return flow
-}
-
-/**
- * Sets the PWM ratio for the flow output
- */
-void write_flow_out(uint16_t flow){
-    TA0CTL &= ~MC_1;                    // stop Timer
-    TA0CCR1 = flow;                     // TA0CCR1 := 'flow'
-    TA0CTL |= MC_1;                     // start Timer
-}
-
-/**
- * Updates the LED status
- * 
- * Each Bit in led stands for a led. The led are numbered from the led for -20% 
- * which is depending on Bit 0 up to the led for +20% which is depending on Bit 10. 
- */
-void update_led(uint16_t led){
-    uint8_t i;
-    for(i=0;i<11;i++){
-        if((led&(1<<i))>0) {
-            *status_led[i].port |= status_led[i].pin;
-        }
-        else {
-            *status_led[i].port &= ~status_led[i].pin;
-        }
-    }
-}
-
-/**
- * Check if the button is pressed. 
- * returns 1 if  the button is pressed and 0 if button is not pressed. 
- */
-uint8_t check_button(){
-    uint8_t button;
-    if((P2IN&PIN_BUTTON)==0) {
-        button = 1;
-    }
-    else {
-        button = 0;
-    }
-    return(button);
-}
-
-/** @} */

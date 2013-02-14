@@ -1,13 +1,10 @@
 #ifndef HARDWARE_H
 #define HARDWARE_H
 
-/** \addtogroup linbox_hardware
-    @{ */
-
 /**
  * @file
  *
- * Hardware description for the Lin-Box.
+ * Hardware description for the ti launchpad
  * 
  *
  * @author      Daniel Winz <daniel.winz@stud.hslu.ch>
@@ -18,8 +15,6 @@
 #include <msp430x21x2.h>
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-/*@-fcnuse@*/   //splint: don't complain about unused HWCONF_PIN macros
-
 
 
 /*
@@ -139,20 +134,8 @@ Comment
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-typedef struct config_led{
-    uint16_t*   port;
-    uint8_t     pin;
-} config_led_t;
 
-#ifndef _GNU_ASSEMBLER_ // C compiler runs only
 // function prototypes
 void hardware_lowlevel_init(void);              // Initialize hardware
-uint16_t read_flow_in(void);                    // read flow value from flow sensor
-void write_flow_out(uint16_t flow);             // write linearized flow value to output
-void update_led(uint16_t led);                  // Updates the LEDs
-uint8_t check_button();                         // Check if the Button is pressed
-#endif //_GNU_ASSEMBLER_
-
-/** @} */
 
 #endif //HARDWARE_H
