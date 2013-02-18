@@ -10,7 +10,9 @@
 
 //~ #include <mspgcc/util.h>                // delay()
 //~ #include <mspgcc/fll.h>
-#include <msp430g2553.h>
+//~ #include <msp430g2553.h>
+//~ #include <msp430x21x2.h>
+#include <msp430.h>
 #include "hardware.h"
 
 

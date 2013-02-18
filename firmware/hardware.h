@@ -10,9 +10,11 @@
  * @author      Daniel Winz <daniel.winz@stud.hslu.ch>
  */
 
-#include <io.h>
-#include <signal.h>
-#include <msp430g2553.h>
+//~ #include <io.h>
+//~ #include <signal.h>
+//~ #include <msp430g2553.h>
+//~ #include <msp430x21x2.h>
+#include <msp430.h>
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -46,7 +48,7 @@ Comment
 #define P1OUT_INIT      (0)
 #define P1SEL_INIT      (0)
 #define P1SEL2_INIT     (0)
-#define P1DIR_INIT      (P_1_0)
+#define P1DIR_INIT      (P1_0)
 #define P1REN_INIT      (P1_1 | P1_2 | P1_3 | P1_4 | P1_5 | P1_6 | P1_7)
 
 #define P1IE_INIT       (0)     ///< disable irq

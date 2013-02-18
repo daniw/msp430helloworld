@@ -1,9 +1,9 @@
 # makfile configuration
 
-NAME            = linbox
+NAME            = launchpad_hello
 CSOURCES        = main.c hardware.c
 #~ ASOURCES        = 
-CPU             = msp430x2132
+CPU             = msp430g2553
 PLATFORM        = launchpad_g2553
 
 
