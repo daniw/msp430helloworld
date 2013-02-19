@@ -11,7 +11,7 @@ BIN_NAME = $(NAME)-$(HOST)-$(PLATFORM)
 
 ASFLAGS         = -mmcu=${CPU} -D_GNU_ASSEMBLER_ -I .
 CFLAGS          = -mmcu=${CPU} -O2 -Wall -g --std=gnu99 -I .
-LDFLAGS         =  -lmspgcc
+#~ LDFLAGS         =  -lmspgcc
 
 
 VPATH += $(PROJECT_ROOT) \

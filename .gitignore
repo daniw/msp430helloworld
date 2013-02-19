@@ -1,3 +1,6 @@
 datasheets/
 *.o
 *.d
+*.elf
+*.a43
+*.lst
