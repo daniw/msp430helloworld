@@ -9,7 +9,7 @@
 //~ #include <mspgcc/util.h>                // delay()
 //~ #include <mspgcc/eventhandler.h>
 //~ #include <stdbool.h>
-#include "hardware.h"
+//~ #include "hardware.h"
 
 //~ #define EVENT_scheduler         EVENT00_bits
 //~ #define EVENT_hello_world       EVENT01_bits
@@ -42,7 +42,7 @@
  * updates the flow output
  */
 void event_hello_world(void) {
-    P1OUT ^= P1_0;
+    P1OUT ^= BIT0;
 }
 
 /**
