@@ -42,7 +42,7 @@
  * updates the flow output
  */
 void event_hello_world(void) {
-    P1OUT ^= P1_0;
+    P1OUT ^= P1_0 | P1_6;
 }
 
 /**
