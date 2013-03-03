@@ -72,8 +72,8 @@ void hardware_lowlevel_init(void) {
     //~ UCB0I2CIE = UCB0I2CIE_INIT;         // enable interrupts on Start , Stop
     //~ IE2      |= IE2_I2C_INIT;           // enable interrupts on RX and TX
 
-    //~ DCOCTL    = DCOCTL_INIT;            // Initializes clock module
-    //~ BCSCTL1   = BCSCTL1_INIT;           
-    //~ BCSCTL2   = BCSCTL2_INIT;           
-    //~ BCSCTL3   = BCSCTL3_INIT;           
+    DCOCTL    = DCOCTL_INIT;            // Initializes clock module
+    BCSCTL1   = BCSCTL1_INIT;           
+    BCSCTL2   = BCSCTL2_INIT;           
+    BCSCTL3   = BCSCTL3_INIT;           
 }

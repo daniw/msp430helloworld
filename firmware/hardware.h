@@ -36,13 +36,13 @@ Comment
 
 
 //--- PORT1 ---
-#define P1_0            BIT0    ///< |OL|       LED for "Hello World"
+#define P1_0            BIT0    ///< |OL|       red LED for "Hello World"
 #define P1_1            BIT1    ///< |IRL|      unused
 #define P1_2            BIT2    ///< |IRL|      unused
 #define P1_3            BIT3    ///< |IRL|      unused
-#define P1_4            BIT4    ///< |IRL|      unused
+#define P1_4            BIT4    ///< |OM|       SMCLK for Measurement of int. clock
 #define P1_5            BIT5    ///< |IRL|      unused
-#define P1_6            BIT6    ///< |OH|       unused
+#define P1_6            BIT6    ///< |OH|       green LED for "Hello World"
 #define P1_7            BIT7    ///< |IRL|      unused
 
 #define P1OUT_INIT      (P1_6)
@@ -128,10 +128,10 @@ Comment
 
 
 //~ //--- Clock Module ---
-//~ #define DCOCTL_INIT     (CALDCO_16MHZ)          
-//~ #define BCSCTL1_INIT    (XT2OFF|CALBC1_16MHZ)   
-//~ #define BCSCTL2_INIT    (0)                     
-//~ #define BCSCTL3_INIT    (0)                     
+#define DCOCTL_INIT     (CALDCO_1MHZ)          
+#define BCSCTL1_INIT    (XT2OFF|CALBC1_1MHZ)   
+#define BCSCTL2_INIT    (0)                     
+#define BCSCTL3_INIT    (0)                     
 
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
