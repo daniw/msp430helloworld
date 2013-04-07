@@ -46,9 +46,9 @@ Comment
 #define P1_7            BIT7    ///< |IRL|      unused
 
 #define P1OUT_INIT      (P1_6)
-#define P1SEL_INIT      (0)
+#define P1SEL_INIT      (P1_4)
 #define P1SEL2_INIT     (0)
-#define P1DIR_INIT      (P1_0 | P1_6)
+#define P1DIR_INIT      (P1_0 | P1_4 | P1_6)
 #define P1REN_INIT      (P1_1 | P1_2 | P1_3 | P1_4 | P1_5 | P1_7)
 
 #define P1IE_INIT       (0)     ///< disable irq
